@@ -1,0 +1,32 @@
+// ************** IMPORT STYLES **************
+
+@use "../abstracts" as *;
+
+// ****************** TABLE ******************
+
+.table-template {
+  border-collapse: collapse;
+  width: 100rem;
+  margin: 1rem 0 6rem;
+
+  th {
+    color: $white;
+    background-color: $indigo;
+    font-weight: 500;
+  }
+
+  td {
+    font-size: 2.2rem;
+    vertical-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #FFEBDE;
+  }
+
+  td,
+  th {
+    padding: 1.2rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,21 @@
+// ************** IMPORT STYLES **************
+
+@use "../abstracts" as *;
+
+// ***************** BUTTONS ******************
+
+.primary-button {
+    @include button-preset(primary-button);
+
+    &:hover {
+        @include button-hover-preset(primary-button);
+    }
+}
+
+.secondary-button {
+    @include button-preset(secondary-button);
+
+    &:hover {
+        @include button-hover-preset(secondary-button);
+    }
+}

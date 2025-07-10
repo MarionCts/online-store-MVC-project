@@ -1,0 +1,56 @@
+// ************** IMPORT STYLES **************
+
+@use "../abstracts" as *;
+
+// ************* PRODUCT CARDS ***************
+
+// ----- PRODUCTS -----
+
+.product__card {
+  @include flex-preset(column, flex-start, flex-start);
+  width: auto;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 150px 50px rgba(0, 0, 0, 0.05),
+    15px 23px 35px -18px rgba(25, 51, 75, 0.06);
+
+  @include media(900px) {
+    @include flex-preset(row, flex-start, flex-start);
+    height: 30rem;
+  }
+}
+
+.product__card__image {
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+
+  @include media(900px) {
+    height: inherit;
+  }
+
+  img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.product__card__text {
+  @include flex-preset(column, flex-start, space-between);
+  gap: 1.5rem;
+  height: inherit;
+  width: 100%;
+  padding: 3rem;
+}
+
+.product__card__text__buttons {
+  @include flex-preset(column, flex-start, flex-start);
+  width: 100%;
+  gap: 1rem;
+
+  input {
+    width: 100%;
+  }
+}

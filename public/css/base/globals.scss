@@ -1,0 +1,83 @@
+// ************** IMPORT STYLES **************
+
+@use "../abstracts" as *;
+
+// ****************** GLOBALS ****************
+
+// ----- HTML -----
+
+html {
+  color: $indigo;
+  font-family: $inter;
+}
+
+// ----- BODY -----
+
+body {
+  min-height: 100vh;
+  @include flex-preset(column);
+}
+
+// ----- HEADER -----
+
+.logo {
+  height: 5rem;
+
+  @include media(768px) {
+    height: 7rem;
+  }
+}
+
+header,
+section,
+main,
+footer {
+  width: 100%;
+}
+
+.header__bar {
+  @include flex-preset(column, center, center);
+  padding: 4rem;
+
+  @include media(1200px) {
+    @include flex-preset(row, center, space-between);
+    padding: 2rem 4rem;
+  }
+
+  .header__bar__menu ul {
+    @include flex-preset(column, center, center);
+    margin-top: 2rem;
+    gap: 1rem;
+
+    @include media(1200px) {
+      @include flex-preset(row, center, center);
+      margin: 0;
+      gap: 2rem;
+    }
+  }
+}
+
+// ----- MAIN -----
+
+main {
+  flex: 1;
+  @include flex-preset(column, center, center);
+  padding: 7rem 3rem;
+
+  @include media(900px) {
+    padding: 7rem 10rem;
+  }
+}
+
+// ----- FOOTER -----
+
+footer {
+  height: 6rem;
+  @include flex-preset(row, center, center);
+  background-color: $indigo;
+
+  p {
+    color: $white;
+    font-size: 1.5rem;
+  }
+}

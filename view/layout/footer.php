@@ -1,0 +1,1 @@
+<footer><p>MPS 2025 © | Tous droits réservés</p></footer>

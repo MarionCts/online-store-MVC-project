@@ -1,0 +1,39 @@
+.primary-button {
+  font-family: "Inter", sans-serif;
+  border-radius: 2rem;
+  border: none;
+  padding: 1.1rem 3rem;
+  background-color: #19334B;
+  color: #fffdfd;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.primary-button:hover {
+  background-color: #FF7E2E;
+  color: #19334B;
+  border: none;
+}
+
+.secondary-button {
+  font-family: "Inter", sans-serif;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  background-color: transparent;
+  border: 0.1rem solid #19334B;
+  color: #19334B;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.secondary-button:hover {
+  background-color: #19334B;
+  color: #fffdfd;
+  border: 0.1rem solid #19334B;
+}/*# sourceMappingURL=buttons.css.map */

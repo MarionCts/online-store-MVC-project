@@ -1,0 +1,142 @@
+// ************** IMPORT STYLES **************
+
+@use "variables" as *;
+
+// ****************** MIXINS *****************
+
+// ----- MEDIA QUERIES -----
+
+@mixin media($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+// ----- FLEXBOX PRESETS -----
+
+@mixin flex-preset($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// ----- GRID PRESETS -----
+
+@mixin grid-preset($columns: repeat(12, 1fr), $gap: 2rem) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+// ----- TEXT PRESETS -----
+
+@mixin text-preset($type) {
+
+  @if $type == hero-title {
+    font-family: $inter;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 5rem;
+    font-size: 4rem;
+
+    @include media(768px) {
+      font-size: 8rem;
+      line-height: 9rem;
+    }
+
+  } @else if $type == primary-title {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 7rem;
+    line-height: 6.5rem;
+
+  } @else if $type == secondary-title {
+    font-family: $inter;
+    font-weight: 600;
+    font-size: 3.5rem;
+
+  } @else if $type == third-title {
+    font-family: $inter;
+    color: $orange;
+    font-weight: 600;
+    font-size: 2.4rem;
+
+  } @else if $type == fourth-title {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 2rem;
+
+  } @else if $type == category {
+    font-family: $inter;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+
+  } @else if $type == paragraph {
+    font-family: $inter;
+    font-weight: 400;
+    font-size: 1.7rem;
+
+  } @else if $type == menu-link {
+    font-family: $inter;
+    color: $indigo;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: 900;
+    font-size: 1.3rem;
+    transition: all 0.2s linear;
+  }
+}
+
+@mixin text-hover-preset($type) {
+  @if $type == menu-link {
+    color: $orange;
+  }
+}
+
+// ----- BUTTON PRESETS -----
+
+@mixin button-preset($type) {
+  @if $type == primary-button {
+    font-family: $inter;
+    border-radius: 2rem;
+    border: none;
+    padding: 1.1rem 3rem;
+    background-color: $indigo;
+    color: $white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+  } @else if $type == secondary-button {
+    font-family: $inter;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    background-color: transparent;
+    border: 0.1rem solid $indigo;
+    color: $indigo;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+}
+
+@mixin button-hover-preset($type) {
+  @if $type == primary-button {
+    background-color: $orange;
+    color: $indigo;
+    border: none;
+  } @else if $type == secondary-button {
+    background-color: $indigo;
+    color: $white;
+    border: 0.1rem solid $indigo;
+  }
+}

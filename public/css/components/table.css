@@ -1,0 +1,22 @@
+.table-template {
+  border-collapse: collapse;
+  width: 100rem;
+  margin: 1rem 0 6rem;
+}
+.table-template th {
+  color: #fffdfd;
+  background-color: #19334B;
+  font-weight: 500;
+}
+.table-template td {
+  font-size: 2.2rem;
+  vertical-align: center;
+}
+.table-template tr:nth-child(even) {
+  background-color: #FFEBDE;
+}
+.table-template td,
+.table-template th {
+  padding: 1.2rem;
+  text-align: center;
+}/*# sourceMappingURL=table.css.map */

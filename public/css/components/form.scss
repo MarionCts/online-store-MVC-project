@@ -1,0 +1,42 @@
+// ************** IMPORT STYLES **************
+
+@use "../abstracts" as *;
+
+// ***************** FORMS *******************
+
+form {
+  width: 40rem;
+  margin: 3rem 0;
+  @include flex-preset(column, center, center);
+  gap: 1.5rem;
+
+  div {
+    width: inherit;
+    gap: 0.5rem;
+    @include flex-preset(column, center, center);
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    border: 0.1rem solid $orange;
+    width: inherit;
+    padding: 1rem;
+    border-radius: 2rem;
+    
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    height: 4rem;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    height: 4.1rem;
+    margin-top: 2rem;
+  }
+}

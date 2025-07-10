@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
+.primary-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 7rem;
+  line-height: 6.5rem;
+}
+
+.secondary-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+
+.third-title {
+  font-family: "Inter", sans-serif;
+  color: #FF7E2E;
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.fourth-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.menu-link {
+  font-family: "Inter", sans-serif;
+  color: #19334B;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 900;
+  font-size: 1.3rem;
+  transition: all 0.2s linear;
+}
+.menu-link:hover {
+  color: #FF7E2E;
+}
+
+th {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+p, td, label {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+html {
+  color: #19334B;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 5rem;
+}
+@media (min-width: 768px) {
+  .logo {
+    height: 7rem;
+  }
+}
+
+header, section, main, footer {
+  width: 100%;
+}
+
+.header__bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+@media (min-width: 1200px) {
+  .header__bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
+.header__bar .header__bar__menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+@media (min-width: 1200px) {
+  .header__bar .header__bar__menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    gap: 2rem;
+  }
+}
+
+main {
+  padding: 7rem 10rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #19334B;
+}
+footer p {
+  color: #fffdfd;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=index.css.map */

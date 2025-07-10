@@ -1,0 +1,67 @@
+// ************** IMPORT STYLES **************
+
+@use '../abstracts' as *;
+
+
+// **************** TYPGRAPHY ****************
+
+// ----- TEXT MODIFICATIONS -----
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bolder {
+    font-weight: 800;
+}
+
+.line-jump {
+    display: block; // allows the text to go back to the line only on large screen
+}
+
+.line-jump-ls {
+    display: inline;
+    @include media(764px) {
+        display: block; // allows the text to go back to the line only on large screen
+    }
+}
+
+// ----- TITLES -----
+
+.primary-title {
+    @include text-preset(primary-title);
+}
+
+.secondary-title {
+    @include text-preset(secondary-title);
+}
+
+.third-title {
+    @include text-preset(third-title);
+}
+
+.fourth-title {
+    @include text-preset(fourth-title);
+}
+
+
+// ----- MAIN MENU LINKS -----
+
+.menu-link {
+    @include text-preset(menu-link);
+
+    &:hover {
+        @include text-hover-preset(menu-link);
+    }
+}
+
+
+// ----- PARAGRAPHS, TABLE CONTETS -----
+
+th {
+    @include text-preset(fourth-title);
+}
+
+p, td, label {
+    @include text-preset(paragraph);
+}
