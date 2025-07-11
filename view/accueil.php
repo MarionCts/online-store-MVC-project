@@ -1,11 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../config/Database.php';
-require_once __DIR__ . '/../config/Router.php';
-require_once __DIR__ . '/../model/Produit.php';
-require_once __DIR__ . '/../repository/ProduitRepository.php';
-require_once __DIR__ . '/../controller/ProduitController.php';
-
 if (!empty($_POST)) {
     $produitRepository = new ProduitRepository();
     $produitsTest = $produitRepository->ajouterProduit($_POST['nom'], $_POST['description'], $_POST['prix'], $_POST['categorie'], $_POST['stock']);
@@ -47,29 +41,6 @@ if (!empty($_POST)) {
                 </div>
             <?php endforeach; ?>
         </div>
-    </section>
-
-    <section class="add__product">
-        <h2 class="primary-title">Ajouter un produit</h2>
-        <form action="" method="POST">
-
-            <label for="nom">Nom</label>
-            <input type="text" name="nom">
-
-            <label for="description">Description</label>
-            <input type="text" name="description">
-
-            <label for="prix">Prix</label>
-            <input type="text" name="prix">
-
-            <label for="categorie">Catégorie</label>
-            <input type="text" name="categorie">
-
-            <label for="stock">Stock</label>
-            <input type="text" name="stock">
-
-            <input class="primary-button" type="submit" value="Ajouter" name="addButton">
-        </form>
     </section>
 
 </main>

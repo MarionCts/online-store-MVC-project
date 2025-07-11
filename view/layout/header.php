@@ -6,21 +6,8 @@
             <li><a class="menu-link" href="index.php?page=historique">Historique des commandes</a></li>
             <li><a class="menu-link" href="index.php?page=panier">Voir le panier</a></li>
             <li><a class="menu-link" href="index.php?page=login">Se connecter</a></li>
+            <li><a class="menu-link" href="index.php?page=register">S'inscrire</a></li>
             <li><a class="menu-link" href="index.php?page=admin_produits">Tableau de bord</a></li>
         </ul>
     </nav>
 </header>
-
-<?php
-    // foreach($utilisateurs as $utilisateur): 
-    ?>
-<?php
-    // if (getIsAdmin()): 
-    ?>
-<!-- <li><a href="index.php?page=admin_produits">Tableau de bord</a></li> -->
-<?php
-// endif; 
-?>
-<?php
-// endforeach;
-?>

@@ -8,6 +8,30 @@ require_once('config/Database.php');
 // /////////////////////////////////////////////////// //
 
 require_once('config/Router.php');
+require_once __DIR__ . '/config/Database.php';
+require_once __DIR__ . '/config/Router.php';
+
+// Admin
+require_once __DIR__ . '/controller/AdminController.php';
+
+// Utilisateurs
+require_once __DIR__ . '/model/Utilisateur.php';
+require_once __DIR__ . '/repository/UtilisateurRepository.php';
+require_once __DIR__ . '/controller/UtilisateurController.php';
+
+// Commandes
+require_once __DIR__ . '/model/Commande.php';
+require_once __DIR__ . '/repository/CommandeRepository.php';
+require_once __DIR__ . '/controller/CommandeController.php';
+
+// Produits
+require_once __DIR__ . '/model/Produit.php';
+require_once __DIR__ . '/repository/ProduitRepository.php';
+require_once __DIR__ . '/controller/ProduitController.php';
+
+// DetailCommande
+require_once __DIR__ . '/model/DetailCommande.php';
+require_once __DIR__ . '/repository/DetailCommandeRepository.php';
 
 ?>
 

@@ -1,11 +1,16 @@
 <?php
- class CommandeRepository {
+class CommandeRepository
+{
+
     private $pdo;
-    public function __construct() {
+
+    public function __construct()
+    {
+
         $this->pdo = Database::connect();
     }
- 
- public function ajouterCommande($dateCommande, $prixTotal)
+
+    public function ajouterCommande($dateCommande, $prixTotal)
     {
         if (!empty($_POST)) {
             $sql =  "INSERT INTO  commandes (dateCommande, prixTotal)
@@ -14,13 +19,13 @@
             $stmt->execute([
                 'dateCommande' => $dateCommande,
                 'prixTotal' => $prixTotal,
-             
+
             ]);
             // header('Location: index.php');
         }
     }
 
-      public function getAllCommandes()
+    public function getAllCommandes()
     {
         $sql = "SELECT *
                 FROM commandes";
@@ -37,5 +42,4 @@
         }
         return $result;
     }
-
 }

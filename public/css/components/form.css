@@ -18,6 +18,8 @@ form div {
 form input[type=text],
 form input[type=number],
 form input[type=date],
+form input[type=email],
+form input[type=password],
 form select {
   border: 0.1rem solid #FF7E2E;
   width: inherit;
@@ -27,6 +29,8 @@ form select {
 form input[type=text],
 form input[type=number],
 form input[type=date],
+form input[type=email],
+form input[type=password],
 form select {
   height: 4rem;
 }

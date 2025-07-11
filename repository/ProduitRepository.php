@@ -1,17 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../model/Produit.php';
-
 class ProduitRepository
 {
     private $pdo;
+
     public function __construct()
     {
         $this->pdo = Database::connect();
     }
 
     // //-----------------------------------------------------------
-    // Méthode Selectionner Produit
+    // Méthode Selectionner tous les Produits
     // //-----------------------------------------------------------
     public function getAllProduits()
     {
@@ -32,6 +31,28 @@ class ProduitRepository
             );
         }
         return $result;
+    }
+
+       // //-----------------------------------------------------------
+    // Méthode Selectionner un seul Produit
+    // //-----------------------------------------------------------
+    public function getProduit($id)
+    {
+        $sql = "SELECT *
+                FROM produits
+                WHERE id = :id;";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        $produit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return new Produit(
+                $produit['id'],
+                $produit['nom'],
+                $produit['description'],
+                $produit['prix'],
+                $produit['categorie'],
+                $produit['stock']
+            );
     }
 
     // //-----------------------------------------------------------
@@ -61,14 +82,14 @@ class ProduitRepository
             'stock' => $stock
         ]);
         $produit = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // header('Location: index.php');
+    
     }
     // // ------------------------------------------------------
     // Modification des produits
     // // ------------------------------------------------------
     public function modifierProduit($id, $nom, $description, $prix, $categorie, $stock)
     {
-        $sql = 'UPDATE produits
+            $sql = 'UPDATE produits
             SET
             nom = :nom,
             description = :description,
@@ -76,27 +97,28 @@ class ProduitRepository
             categorie = :categorie,
             stock = :stock
             WHERE id = :id';
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            'nom' => $nom,
-            'desciption' => $description,
-            'prix' => $prix,
-            'categorie' => $categorie,
-            'stock' => $stock,
-            'id' => $id
-        ]);
-        $produit = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'nom' => $nom,
+                'description' => $description,
+                'prix' => $prix,
+                'categorie' => $categorie,
+                'stock' => $stock,
+                'id' => $id
+            ]);   
+        }
+
+
     // // ------------------------------------------------------
     // Supprimer des produits
     // // ------------------------------------------------------
-    public function supprimerProduit($id, $nom, $description, $prix, $categorie, $stock)
+    public function supprimerProduit($id)
     {
         $sql = 'DELETE FROM produits
         WHERE id = :id';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
-            'id' => $_POST['id']
+            'id' => $id
         ]);
     }
 }

@@ -70,7 +70,7 @@ main {
   justify-content: center;
   padding: 7rem 3rem;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   main {
     padding: 7rem 10rem;
   }

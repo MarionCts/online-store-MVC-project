@@ -19,7 +19,6 @@ class DetailCommandeRepository
             (int)$row['id_produit']
         );
     }
-
 }
 
 ?>

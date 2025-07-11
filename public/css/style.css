@@ -1,7 +1,7 @@
 .table-template {
   border-collapse: collapse;
   width: 100rem;
-  margin: 1rem 0 6rem;
+  margin: 3rem 0 6rem;
 }
 .table-template th {
   color: #fffdfd;
@@ -10,7 +10,7 @@
 }
 .table-template td {
   font-size: 2.2rem;
-  vertical-align: center;
+  vertical-align: middle;
 }
 .table-template tr:nth-child(even) {
   background-color: #FFEBDE;
@@ -81,6 +81,8 @@ form div {
 form input[type=text],
 form input[type=number],
 form input[type=date],
+form input[type=email],
+form input[type=password],
 form select {
   border: 0.1rem solid #FF7E2E;
   width: inherit;
@@ -90,6 +92,8 @@ form select {
 form input[type=text],
 form input[type=number],
 form input[type=date],
+form input[type=email],
+form input[type=password],
 form select {
   height: 4rem;
 }
@@ -321,7 +325,7 @@ main {
   justify-content: center;
   padding: 7rem 3rem;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   main {
     padding: 7rem 10rem;
   }
@@ -428,7 +432,7 @@ footer p {
   }
 }
 
-.add__product {
+.form__product {
   width: auto;
   text-align: center;
   display: flex;
@@ -437,12 +441,12 @@ footer p {
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .add__product {
-    width: 100%;
-    text-align: left;
+  .form__product {
+    width: auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */

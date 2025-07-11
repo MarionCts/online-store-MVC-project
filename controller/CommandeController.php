@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../repository/CommandeRepository.php';
+
 
 class CommandeController {
     private CommandeRepository $commandeRepository;

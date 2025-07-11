@@ -1,8 +1,5 @@
 <?php
-require_once __DIR__ . '/../controller/ProduitController.php';
-require_once __DIR__ . '/../controller/AdminController.php';
-require_once __DIR__ . '/../controller/CommandeController.php';
-require_once __DIR__ . '/../controller/UtilisateurController.php';
+
 class Router
 {
     public static function redirect()
@@ -22,15 +19,31 @@ class Router
                     break;
                 case 'login':
                     $controller = new UtilisateurController();
-                    $controller->login();
+                    $controller->findUtilisateur();
                     break;
                 case 'panier':
                     $controller = new ProduitController();
                     $controller->panier();
                     break;
                 case 'admin_produits':
-                    $controller = new UtilisateurController();
+                    $controller = new AdminController();
                     $controller->index();
+                    break;
+                case 'add_product':
+                    $controller = new AdminController();
+                    $controller->addProduct();
+                    break;
+                case 'modify_product':
+                    $controller = new AdminController();
+                    $controller->modifyProduct();
+                    break;
+                case 'delete_product':
+                    $controller = new AdminController();
+                    $controller->deleteProduct();
+                    break;
+                case 'register':
+                    $controller = new UtilisateurController();
+                    $controller->register();
                     break;
                 default:
                     echo 'Page not found';

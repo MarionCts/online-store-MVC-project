@@ -22,6 +22,19 @@ ul, li, a {
   font-weight: 800;
 }
 
+.line-jump {
+  display: block;
+}
+
+.line-jump-ls {
+  display: inline;
+}
+@media (min-width: 764px) {
+  .line-jump-ls {
+    display: block;
+  }
+}
+
 .primary-title {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -95,7 +108,10 @@ body {
   }
 }
 
-header, section, main, footer {
+header,
+section,
+main,
+footer {
   width: 100%;
 }
 
@@ -112,7 +128,7 @@ header, section, main, footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2rem 4rem;
   }
 }
 .header__bar .header__bar__menu ul {
@@ -135,12 +151,17 @@ header, section, main, footer {
 }
 
 main {
-  padding: 7rem 10rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 7rem 3rem;
+}
+@media (min-width: 600px) {
+  main {
+    padding: 7rem 10rem;
+  }
 }
 
 footer {

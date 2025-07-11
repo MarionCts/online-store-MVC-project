@@ -77,16 +77,16 @@
   }
 }
 
-// ----- ADD PRODUCT FORM -----
+// ----- ADD PRODUCT / MODIFY PRODUCT FORM -----
 
-.add__product {
+.form__product {
   width: auto;
   text-align: center;
   @include flex-preset(column, center, center);
 
   @include media(768px) {
-    width: 100%;
-    text-align: left;
-    @include flex-preset(column, flex-start, flex-start);
+    width: auto;
+    text-align: center;
+    @include flex-preset(column, center, center);
   }
 }

@@ -64,7 +64,7 @@ main {
   @include flex-preset(column, center, center);
   padding: 7rem 3rem;
 
-  @include media(900px) {
+  @include media(600px) {
     padding: 7rem 10rem;
   }
 }

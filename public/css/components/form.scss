@@ -19,6 +19,8 @@ form {
   input[type="text"],
   input[type="number"],
   input[type="date"],
+  input[type="email"],
+  input[type="password"],
   select {
     border: 0.1rem solid $orange;
     width: inherit;
@@ -30,6 +32,8 @@ form {
   input[type="text"],
   input[type="number"],
   input[type="date"],
+   input[type="email"],
+  input[type="password"],
   select {
     height: 4rem;
   }
