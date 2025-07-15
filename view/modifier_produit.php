@@ -1,7 +1,11 @@
+<?php $token = genererTokenCSRF(); ?>
+
 <main>
     <section class="form__product">
         <h2 class="primary-title">Modifier un produit</h2>
         <form action="index.php?page=modify_product&id=<?= htmlspecialchars($id) ?>" method="POST">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>">
+
             <p>Vous êtes en train de modifier le produit :</p>
             <h3 class="fourth-title"><?= htmlspecialchars($produit->getNom()) ?></h3>
 

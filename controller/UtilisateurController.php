@@ -19,9 +19,7 @@ class UtilisateurController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $utilisateurs = $this->utilisateurRepository->ajouterUtilisateur($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['password']);
-            header('Location: index.php?page=accueil');
         } else {
-            // Inclure la vue et lui passer les données
             require __DIR__ . '/../view/register.php';
         }
     }
@@ -29,8 +27,13 @@ class UtilisateurController
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérification CSRF
+            if (!isset($_POST['csrf_token']) || !verifierTokenCSRF($_POST['csrf_token'])) {
+                setFlash('danger', 'Erreur de sécurité');
+                header('Location: index.php');
+                exit();
+            }
             $utilisateurs = $this->utilisateurRepository->sessionLogin();
-
         } else {
             // Inclure la vue et lui passer les données
             require __DIR__ . '/../view/login.php';
@@ -43,7 +46,6 @@ class UtilisateurController
             session_destroy();
             header("Location: index.php?page=login");
             exit();
-        };   
-
+        };
     }
 }

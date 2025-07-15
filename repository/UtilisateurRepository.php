@@ -43,7 +43,9 @@ class UtilisateurRepository
 
     public function ajouterUtilisateur($nom, $prenom, $email, $password)
     {
-        $sql = "INSERT INTO utilisateurs (
+        if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+
+            $sql = "INSERT INTO utilisateurs (
             nom,
             prenom,
             email,
@@ -54,14 +56,20 @@ class UtilisateurRepository
             :email,
             :password
         );";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([
-            'nom' => $nom,
-            'prenom' => $prenom,
-            'email' => $email,
-            'password' => password_hash($_POST['password'], PASSWORD_ARGON2I)
-        ]);
-        $utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'email' => $email,
+                'password' => password_hash($_POST['password'], PASSWORD_ARGON2I)
+            ]);
+            $utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            setFlash('success', 'Vous avez bien été inscrit !');
+            header('Location: index.php');
+        } else {
+            // Inclure la vue et lui passer les données
+            setFlash('danger', 'Vous devez remplir tous les champs.');
+        }
     }
 
     // //-----------------------------------------------------------
@@ -80,11 +88,13 @@ class UtilisateurRepository
             $_SESSION['email'] = $utilisateur['email'];
             $_SESSION['prenom'] = $utilisateur['prenom'];
             $_SESSION['isAdmin'] = $utilisateur['isAdmin'];
+
             header('Location: index.php?page=accueil');
             exit();
+
         } else {
-            $passwordError = "Votre mot de passe est incorrect";
+            setFlash('danger', "Il y a un problème au niveau de l'adresse mail ou du mot de passe");
+            header('Location: index.php?page=login');
         }
     }
-
 }

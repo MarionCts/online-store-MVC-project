@@ -34,16 +34,20 @@ class Router
                     $controller->panier();
                     break;
                 case 'addToPanier':
-                     $controller = new CommandeController();
+                    $controller = new CommandeController();
                     $controller->addToPanier();
                     break;
-                    case 'addCommande':
-                     $controller = new CommandeController();
+                case 'addCommande':
+                    $controller = new CommandeController();
                     $controller->addCommande();
                     break;
                 case 'removeFromPanier':
                     $controller = new CommandeController();
                     $controller->removeFromPanier();
+                    break;
+                case 'emptyPanier':
+                    $controller = new CommandeController();
+                    $controller->emptyPanier();
                     break;
                 case 'admin_produits':
                     $controller = new AdminController();
@@ -70,7 +74,8 @@ class Router
                     break;
             }
         } else {
-            echo 'accueil';
+            $controller = new ProduitController();
+            $controller->index();
         }
     }
 }

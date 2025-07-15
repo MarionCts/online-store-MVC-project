@@ -1,8 +1,11 @@
+<?php $token = genererTokenCSRF(); ?>
+
 <main>
 
     <h2 class="primary-title">Se connecter</h2>
 
     <form action="index.php?page=login" method="POST">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>">
         <label for="email">Email</label>
         <input type="email" name="email">
         <label for="password">Password</label>

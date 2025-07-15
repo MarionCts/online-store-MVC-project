@@ -188,10 +188,6 @@ ul, li, a {
   font-weight: 800;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .line-jump {
   display: block;
 }
@@ -326,6 +322,29 @@ footer {
   width: auto;
   margin: 0;
   height: auto;
+}
+
+.alert {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.4rem;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.section {
+  margin-bottom: 3rem;
 }
 
 main {

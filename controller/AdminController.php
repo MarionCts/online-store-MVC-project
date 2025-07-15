@@ -1,7 +1,5 @@
 <?php
 
-
-
 class AdminController
 {
     private ProduitRepository $produitRepository;
@@ -22,6 +20,11 @@ class AdminController
 
     public function addProduct()
     {
+        // Vérification CSRF
+        if (!isset($_POST['csrf_token']) || !verifierTokenCSRF($_POST['csrf_token'])) {
+            setFlash('danger', 'Erreur de sécurité');
+            header('Location: index.php');
+        }
 
         if (!empty($_POST['addButton']) && !empty($_POST['nom']) && !empty($_POST['description']) && !empty($_POST['prix']) && !empty($_POST['categorie']) && !empty($_POST['stock'])) {
             $produits = $this->produitRepository->ajouterProduit($_POST['nom'], $_POST['description'], $_POST['prix'], $_POST['categorie'], $_POST['stock']);
@@ -33,8 +36,14 @@ class AdminController
         require __DIR__ . '/../view/admin_produits.php';
     }
 
+
     public function modifyProduct()
     {
+        // Vérification CSRF
+        if (!isset($_POST['csrf_token']) || !verifierTokenCSRF($_POST['csrf_token'])) {
+            setFlash('danger', 'Erreur de sécurité');
+            header('Location: index.php');
+        }
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];

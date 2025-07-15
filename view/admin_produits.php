@@ -1,4 +1,7 @@
+<?php $token = genererTokenCSRF(); ?>
+
 <main>
+    <?php if($_SESSION['isAdmin'] === 1): ?>
     <h1 class="primary-title">Liste des produits</h1>
     <table class="table-template">
         <thead>
@@ -22,6 +25,7 @@
     <section class="form__product">
         <h2 class="primary-title">Ajouter un produit</h2>
         <form action="index.php?page=add_product" method="POST">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>">
 
             <label for="nom">Nom</label>
             <input type="text" name="nom">
@@ -44,4 +48,7 @@
         <a class="secondary-button user-button" href="index.php?page=liste_utilisateur">Gérer les utilisateurs</a>
 
     </section>
+    <?php else: ?>
+        <h3 class="third-title">Vous n'avez pas les droits d'accès à cette page.</h3>
+        <?php endif; ?>
 </main>

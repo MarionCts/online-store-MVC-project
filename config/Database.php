@@ -2,16 +2,25 @@
 
 class Database
 {
+    private static ?PDO $pdo = null;
 
-    private static $instance = null;
-
-    public static function connect()
+    public static function connect(): PDO
     {
+        if (self::$pdo === null) {
+            $host = 'localhost';
+            $dbname = "tp_boutique";
+            $user = "root";
+            $pass = "";
 
-        if (!self::$instance) {
-            self::$instance = new PDO('mysql:host=localhost;dbname=tp_boutique;charset=utf8', 'root', '');
+            try {
+                $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
+                self::$pdo = new PDO($dsn, $user, $pass);
+                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                die("Erreur de connexion : " . $e->getMessage());
+            }
         }
-        return self::$instance;
+        return self::$pdo;
     }
 }
 

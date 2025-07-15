@@ -110,11 +110,20 @@ class CommandeController
             $totalPrice = $_GET['totalPrice'];
             $this->commandeRepository->ajouterCommande(date('Y-m-d'), $totalPrice);
             unset($_SESSION['panier']);
-            header('Location: index.php?page=panier');
+            setFlash('success', 'Votre commande a bien été validée !');
+            header('Location: index.php');
+        } else {
+            setFlash('danger', "Votre commande n'a pas été validée.");
+            header('Location: index.php');
         }
 
         // Inclure la vue et lui passer les données
         require __DIR__ . '/../view/panier.php';
     }
 
+    public function emptyPanier()
+    {
+        unset($_SESSION['panier']);
+        header('Location: index.php?page=panier');
+    }
 }

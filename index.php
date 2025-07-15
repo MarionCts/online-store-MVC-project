@@ -15,6 +15,9 @@ require_once('config/Router.php');
 require_once __DIR__ . '/config/Database.php';
 require_once __DIR__ . '/config/Router.php';
 
+// Utils
+require_once __DIR__ . '/utils/functions.php';
+
 // Admin
 require_once __DIR__ . '/controller/AdminController.php';
 
@@ -41,6 +44,7 @@ require_once __DIR__ . '/repository/DetailCommandeRepository.php';
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,13 +54,21 @@ require_once __DIR__ . '/repository/DetailCommandeRepository.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<?php include './view/layout/header.php' ?>
+    <?php include './view/layout/header.php' ?>
 
-<?php Router::redirect(); ?>
+    <?php if ($flash = getFlash()): ?>
+        <div class="alert alert-<?= $flash['type'] ?>">
+            <?= $flash['message'] ?>
+        </div>
+    <?php endif; ?>
 
-<?php include './view/layout/footer.php' ?>
+    <?php Router::redirect(); ?>
+
+    <?php include './view/layout/footer.php' ?>
 
 </body>
+
 </html>
