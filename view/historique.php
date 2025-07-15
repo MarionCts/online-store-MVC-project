@@ -1,5 +1,6 @@
-<main>
-    <h1 class="primary-title">Historique des commandes</h1>
+
+    <main>
+        <h1 class="primary-title">Historique des commandes</h1>
     <table class="table-template">
         <thead>
             <th>Date de la commande</th>

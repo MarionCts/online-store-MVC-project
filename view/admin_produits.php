@@ -1,11 +1,12 @@
 <main>
+    <a class="primary-button user-button" href="index.php?page=liste_utilisateur">Gérer les utilisateurs</a>
     <h1 class="primary-title">Liste des produits</h1>
     <table class="table-template">
         <thead>
             <th>Nom</th>
             <th>Prix</th>
             <th>Catégorie</th>
-            <th>Action</th>
+            <th>Actions</th>
         </thead>
         <tbody>
             <?php foreach ($produits as $produit): ?>

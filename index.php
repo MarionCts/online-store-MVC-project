@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+// session_unset();
+// session_destroy();
+
 define('BASE_URL', 'http://localhost/Arinfo/PHP_MVC_TP-boutique');
 require_once('config/Database.php');
 

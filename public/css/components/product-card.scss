@@ -16,18 +16,14 @@
 
   @include media(900px) {
     @include flex-preset(row, flex-start, flex-start);
-    height: 30rem;
+    min-height: 30rem;
   }
 }
 
 .product__card__image {
-  height: 20rem;
+  height: 100%;
   width: 100%;
   overflow: hidden;
-
-  @include media(900px) {
-    height: inherit;
-  }
 
   img {
     height: inherit;

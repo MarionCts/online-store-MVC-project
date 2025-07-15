@@ -13,17 +13,33 @@ class Router
                     $controller = new ProduitController();
                     $controller->index();
                     break;
+                case 'liste_utilisateur':
+                    $controller = new adminController();
+                    $controller->allUtilisateur();
+                    break;
                 case 'historique':
                     $controller = new CommandeController();
                     $controller->index();
                     break;
                 case 'login':
                     $controller = new UtilisateurController();
-                    $controller->findUtilisateur();
+                    $controller->login();
+                    break;
+                case 'logout':
+                    $controller = new UtilisateurController();
+                    $controller->logout();
                     break;
                 case 'panier':
-                    $controller = new ProduitController();
+                    $controller = new CommandeController();
                     $controller->panier();
+                    break;
+                case 'addToPanier':
+                     $controller = new CommandeController();
+                    $controller->addToPanier();
+                    break;
+                case 'removeFromPanier':
+                    $controller = new CommandeController();
+                    $controller->removeFromPanier();
                     break;
                 case 'admin_produits':
                     $controller = new AdminController();

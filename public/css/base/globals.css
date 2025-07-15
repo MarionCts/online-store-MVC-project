@@ -62,6 +62,15 @@ footer {
   }
 }
 
+.logout__form {
+  width: auto;
+}
+.logout__form .logout__form__button {
+  width: auto;
+  margin: 0;
+  height: auto;
+}
+
 main {
   flex: 1;
   display: flex;

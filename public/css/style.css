@@ -40,6 +40,9 @@
   color: #19334B;
   border: none;
 }
+.primary-button .logout {
+  width: auto;
+}
 
 .secondary-button {
   font-family: "Inter", sans-serif;
@@ -98,7 +101,6 @@ form select {
   height: 4rem;
 }
 form input[type=submit] {
-  width: 100%;
   height: 4.1rem;
   margin-top: 2rem;
 }
@@ -119,19 +121,14 @@ form input[type=submit] {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 30rem;
+    min-height: 30rem;
   }
 }
 
 .product__card__image {
-  height: 20rem;
+  height: 100%;
   width: 100%;
   overflow: hidden;
-}
-@media (min-width: 900px) {
-  .product__card__image {
-    height: inherit;
-  }
 }
 .product__card__image img {
   height: inherit;
@@ -317,6 +314,15 @@ footer {
   }
 }
 
+.logout__form {
+  width: auto;
+}
+.logout__form .logout__form__button {
+  width: auto;
+  margin: 0;
+  height: auto;
+}
+
 main {
   flex: 1;
   display: flex;
@@ -405,6 +411,10 @@ footer p {
   }
 }
 
+.user-button {
+  margin-bottom: 5rem;
+}
+
 .products {
   margin-bottom: 7rem;
 }
@@ -439,14 +449,4 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-@media (min-width: 768px) {
-  .form__product {
-    width: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 }/*# sourceMappingURL=style.css.map */

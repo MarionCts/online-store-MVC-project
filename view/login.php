@@ -7,6 +7,9 @@
         <input type="email" name="email">
         <label for="password">Password</label>
         <input type="password" name="password">
+        <?php if (isset($passwordError)): ?>
+            <p><?= htmlspecialchars($passwordError) ?></p>
+        <?php endif; ?>
         <!-- <label for="isAdmin">Admin</label>
     <input type="text" name="isAdmin"> -->
         <input class="primary-button" type="submit" value="Se connecter" name="connect">

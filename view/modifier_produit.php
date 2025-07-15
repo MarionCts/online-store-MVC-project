@@ -2,7 +2,7 @@
     <section class="form__product">
         <h2 class="primary-title">Modifier un produit</h2>
         <form action="index.php?page=modify_product&id=<?= htmlspecialchars($id) ?>" method="POST">
-            <p>Vous êtes en train de modifier le produit :</p> 
+            <p>Vous êtes en train de modifier le produit :</p>
             <h3 class="fourth-title"><?= htmlspecialchars($produit->getNom()) ?></h3>
 
             <label for="description">Modifier le nom</label>

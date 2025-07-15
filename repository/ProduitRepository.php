@@ -121,4 +121,19 @@ class ProduitRepository
             'id' => $id
         ]);
     }
+
+    // //-----------------------------------------------------------
+        // Méthode Selectionner Utilisateur
+        // //-----------------------------------------------------------
+        public function getAllUtilisateurs(){
+            $sql = "SELECT *
+                    FROM utilisateurs";
+            $stmt = $this->pdo->query($sql);
+            $utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                 $result = [];
+            foreach ($utilisateurs as $utilisateur) {
+                 $result[] = new Utilisateur($utilisateur["id"], $utilisateur["nom"], $utilisateur["prenom"], $utilisateur["email"],$utilisateur["password"],$utilisateur["isAdmin"]);
+            }
+            return $result;
+        }
 }

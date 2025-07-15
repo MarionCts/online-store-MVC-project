@@ -55,6 +55,12 @@
   }
 }
 
+// ----- USERS LIST -----
+
+.user-button {
+  margin-bottom: 5rem;
+}
+
 // ----- PRODUCTS LIST -----
 
 .products {
@@ -83,10 +89,4 @@
   width: auto;
   text-align: center;
   @include flex-preset(column, center, center);
-
-  @include media(768px) {
-    width: auto;
-    text-align: center;
-    @include flex-preset(column, center, center);
-  }
 }

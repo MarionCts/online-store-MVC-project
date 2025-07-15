@@ -17,6 +17,9 @@
   color: #19334B;
   border: none;
 }
+.primary-button .logout {
+  width: auto;
+}
 
 .secondary-button {
   font-family: "Inter", sans-serif;

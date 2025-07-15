@@ -143,8 +143,8 @@ ALTER TABLE `utilisateurs`
 -- Contraintes pour la table `detailcommande`
 --
 ALTER TABLE `detailcommande`
-  ADD CONSTRAINT `fk_commandes` FOREIGN KEY (`id_commande`) REFERENCES `utilisateurs` (`id`),
-  ADD CONSTRAINT `fk_produits` FOREIGN KEY (`id_produit`) REFERENCES `utilisateurs` (`id`),
+  ADD CONSTRAINT `fk_commandes` FOREIGN KEY (`id_commande`) REFERENCES `commandes` (`id`),
+  ADD CONSTRAINT `fk_produits` FOREIGN KEY (`id_produit`) REFERENCES `produits` (`id`),
   ADD CONSTRAINT `fk_utilisateurs` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`);
 COMMIT;
 
