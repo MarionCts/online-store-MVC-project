@@ -2,8 +2,6 @@
 
     <section class="basket">
         <h1 class="primary-title">Panier</h1>
-        <div class="basket__container">
-            <div class="basket__card">
                 <table class="table-template">
                     <thead>
                         <th>Article</th>
@@ -24,7 +22,7 @@
                                     <td><?= htmlspecialchars(number_format($produit->getPrix(), 2, ',', ' ')) ?>€</td>
                                     <td><?= htmlspecialchars($produit->getQuantity()) ?></td>
                                     <td>
-                                        <a class="secondary-button" href="index.php?page=removeFromPanier&id=<?= htmlspecialchars($produit->getId()) ?>" onclick="return confirm('Diminuer la quantité ou supprimer l\'article ?')">Retirer un produit</a>
+                                        <a class="secondary-button" href="index.php?page=removeFromPanier&id=<?= htmlspecialchars($produit->getId()) ?>" onclick="return confirm('Diminuer la quantité ou supprimer l\'article ?')">Retirer un article</a>
                                     </td>
                                 </tr>
                             <?php
@@ -38,12 +36,10 @@
                     <tfoot>
                         <tr>
                             <td colspan="3"><strong>Total</strong></td>
-                            <td><strong><?= htmlspecialchars(number_format($totalPrice, 2, ',', ' ')) ?>€</strong></td>
+                            <td name="totalPrice"><strong><?= htmlspecialchars(number_format($totalPrice, 2, ',', ' ')) ?>€</strong></td>
                         </tr>
                     </tfoot>
                 </table>
-                <a class="primary-button" href="">Valider le panier</a>
-            </div>
-        </div>
+                    <a class="primary-button" href="index.php?page=addCommande&totalPrice=<?= htmlspecialchars($totalPrice) ?>">Valider la commande</a>
     </section>
 </main>

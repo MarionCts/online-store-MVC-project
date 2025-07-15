@@ -12,7 +12,7 @@ class CommandeRepository
     public function ajouterCommande($dateCommande, $prixTotal)
     {
         $sql = "INSERT INTO commandes (
-            dateCommande, prixTotal
+            date_commande, prix_total
             )VALUES(
             :dateCommande,
             :prixTotal)";

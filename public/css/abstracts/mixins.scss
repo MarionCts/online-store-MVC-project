@@ -112,6 +112,7 @@
     letter-spacing: 0.05rem;
     cursor: pointer;
     transition: all 0.2s linear;
+    text-align: center;
 
   } @else if $type == secondary-button {
     font-family: $inter;
@@ -126,6 +127,7 @@
     letter-spacing: 0.05rem;
     cursor: pointer;
     transition: all 0.2s linear;
+    text-align: center;
   }
 }
 

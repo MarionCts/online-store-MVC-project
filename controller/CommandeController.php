@@ -29,7 +29,7 @@ class CommandeController
         // Inclure la vue et lui passer les données du panier
         require __DIR__ . '/../view/panier.php';
     }
-     /**
+    /**
      * Ajoute un produit au panier.
      */
     public function addToPanier()
@@ -43,14 +43,14 @@ class CommandeController
                 if (!isset($_SESSION['panier'])) {
                     $_SESSION['panier'] = [];
                 }
-            $found = false;
+                $found = false;
                 // Vérifier si le produit existe déjà dans le panier, puis incrémenter la quantité
                 foreach ($_SESSION['panier'] as $key => $item) {
-                    $item=unserialize($item);
+                    $item = unserialize($item);
                     if ($item->getId() == $productId) {
-                        $product =  unserialize($_SESSION['panier'][$key]) ;
-                       $product->setQuantity($item->getQuantity() + 1);
-                    $_SESSION['panier'][$key] = serialize($product);
+                        $product =  unserialize($_SESSION['panier'][$key]);
+                        $product->setQuantity($item->getQuantity() + 1);
+                        $_SESSION['panier'][$key] = serialize($product);
                         $found = true;
                         break;
                     }
@@ -81,13 +81,13 @@ class CommandeController
             if (isset($_SESSION['panier']) && !empty($_SESSION['panier'])) {
                 // Parcourir le panier pour trouver et supprimer l'article
                 foreach ($_SESSION['panier'] as $key => $produit) {
-                             $produit=unserialize($produit);
+                    $produit = unserialize($produit);
                     if ($produit->getId() == $productIdToRemove) {
-    // Décrémenter la quantité
+                        // Décrémenter la quantité
                         if ($produit->getQuantity() > 1) {
-                                 $product =  unserialize($_SESSION['panier'][$key]) ;
-                           $product->setQuantity($produit->getQuantity() - 1);
-                           $_SESSION['panier'][$key] = serialize($product);
+                            $product =  unserialize($_SESSION['panier'][$key]);
+                            $product->setQuantity($produit->getQuantity() - 1);
+                            $_SESSION['panier'][$key] = serialize($product);
                         } else {
                             // Supprimer l'article si la quantité est de 1
                             unset($_SESSION['panier'][$key]);
@@ -102,5 +102,19 @@ class CommandeController
         header('Location: index.php?page=panier');
         exit();
     }
-}
 
+    public function addCommande()
+    {
+
+        if ($_GET['totalPrice']) {
+            $totalPrice = $_GET['totalPrice'];
+            $this->commandeRepository->ajouterCommande(date('Y-m-d'), $totalPrice);
+            unset($_SESSION['panier']);
+            header('Location: index.php?page=panier');
+        }
+
+        // Inclure la vue et lui passer les données
+        require __DIR__ . '/../view/panier.php';
+    }
+
+}

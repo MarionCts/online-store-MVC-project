@@ -90,3 +90,9 @@
   text-align: center;
   @include flex-preset(column, center, center);
 }
+
+// ----- BASKET -----
+
+.basket {
+  @include flex-preset(column, center, center);
+}

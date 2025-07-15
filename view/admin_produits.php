@@ -1,5 +1,4 @@
 <main>
-    <a class="primary-button user-button" href="index.php?page=liste_utilisateur">Gérer les utilisateurs</a>
     <h1 class="primary-title">Liste des produits</h1>
     <table class="table-template">
         <thead>
@@ -41,6 +40,8 @@
 
             <input class="primary-button" type="submit" value="Ajouter" name="addButton">
         </form>
+
+        <a class="secondary-button user-button" href="index.php?page=liste_utilisateur">Gérer les utilisateurs</a>
 
     </section>
 </main>

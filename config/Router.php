@@ -37,6 +37,10 @@ class Router
                      $controller = new CommandeController();
                     $controller->addToPanier();
                     break;
+                    case 'addCommande':
+                     $controller = new CommandeController();
+                    $controller->addCommande();
+                    break;
                 case 'removeFromPanier':
                     $controller = new CommandeController();
                     $controller->removeFromPanier();
